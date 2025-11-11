@@ -213,6 +213,115 @@ galleryItems.forEach(item => {
 });
 
 // ===================================
+// Temple Carousel Functionality
+// ===================================
+const carouselTrack = document.getElementById('carousel-track');
+const carouselSlides = document.querySelectorAll('.carousel-slide');
+const prevBtn = document.getElementById('carousel-prev');
+const nextBtn = document.getElementById('carousel-next');
+const dotsContainer = document.getElementById('carousel-dots');
+
+let currentSlide = 0;
+const totalSlides = carouselSlides.length;
+
+// Create dots dynamically
+function createDots() {
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('carousel-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    }
+}
+
+// Update carousel position
+function updateCarousel() {
+    const slideWidth = carouselSlides[0].offsetWidth;
+    carouselTrack.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+    
+    // Update dots
+    const dots = document.querySelectorAll('.carousel-dot');
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+    });
+}
+
+// Go to specific slide
+function goToSlide(index) {
+    currentSlide = index;
+    updateCarousel();
+}
+
+// Next slide
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateCarousel();
+}
+
+// Previous slide
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+}
+
+// Event listeners
+prevBtn.addEventListener('click', prevSlide);
+nextBtn.addEventListener('click', nextSlide);
+
+// Auto-play carousel (every 5 seconds)
+let autoplayInterval = setInterval(nextSlide, 5000);
+
+// Pause autoplay on hover
+const carouselContainer = document.getElementById('temple-carousel-container');
+carouselContainer.addEventListener('mouseenter', () => {
+    clearInterval(autoplayInterval);
+});
+
+carouselContainer.addEventListener('mouseleave', () => {
+    autoplayInterval = setInterval(nextSlide, 5000);
+});
+
+// Touch/Swipe support for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+carouselContainer.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+carouselContainer.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+});
+
+function handleSwipe() {
+    if (touchEndX < touchStartX - 50) {
+        // Swipe left
+        nextSlide();
+    }
+    if (touchEndX > touchStartX + 50) {
+        // Swipe right
+        prevSlide();
+    }
+}
+
+// Update carousel on window resize
+window.addEventListener('resize', updateCarousel);
+
+// Initialize
+createDots();
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+        prevSlide();
+    } else if (e.key === 'ArrowRight') {
+        nextSlide();
+    }
+});
+
+// ===================================
 // Scroll to Top Button (Optional Enhancement)
 // ===================================
 function createScrollToTopButton() {

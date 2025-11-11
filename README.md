@@ -73,19 +73,19 @@ Edit the CSS variables in `styles.css`:
 
 ### Adding Real Images
 
-Replace the placeholder emojis with actual images:
+The gallery already displays 9 real photos from `photos/gallery/` folder (1.jpeg through 9.jpeg) in a 3×3 grid!
 
-1. Add your images to an `images/` folder
-2. In `index.html`, update the gallery items:
-   ```html
-   <div class="gallery-item">
-       <img src="images/your-image.jpg" alt="Description">
-   </div>
-   ```
-3. Update the hero background in `styles.css`:
+To update gallery images:
+1. Replace the images in `photos/gallery/` folder (numbered 1-9)
+2. Or update image paths in `index.html` gallery section
+3. Keep the same naming (1.jpeg, 2.jpeg, etc.) for easy management
+
+To update the hero background:
+1. Place your temple hero image in `photos/` folder
+2. Update `styles.css`:
    ```css
    .hero {
-       background: url('images/hero-image.jpg') center/cover;
+       background: url('photos/your-hero-image.jpg') center/cover;
    }
    ```
 

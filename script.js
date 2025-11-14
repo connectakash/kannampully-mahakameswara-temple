@@ -133,6 +133,7 @@ donationForm.addEventListener('submit', (e) => {
     }
     
     const name = document.getElementById('donor-name').value;
+    const mobile = document.getElementById('donor-mobile').value;
     const email = document.getElementById('donor-email').value;
     
     if (!amount || amount <= 0) {
@@ -140,13 +141,19 @@ donationForm.addEventListener('submit', (e) => {
         return;
     }
     
-    if (!name || !email) {
+    if (!name || !mobile || !email) {
         alert('Please fill in all required fields.');
         return;
     }
     
+    // Validate mobile number (10 digits)
+    if (!/^[0-9]{10}$/.test(mobile)) {
+        alert('Please enter a valid 10-digit mobile number.');
+        return;
+    }
+    
     // In a real application, you would process the payment here
-    alert(`Thank you ${name} for your generous donation of $${amount}! 🙏\n\nThis is a demo. In a real website, this would redirect to a payment gateway.`);
+    alert(`Thank you ${name} for your generous donation of ₹${amount}! 🙏\n\nThis is a demo. In a real website, this would redirect to a payment gateway.`);
     
     // Reset form
     donationForm.reset();

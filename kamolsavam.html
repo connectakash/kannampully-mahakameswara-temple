@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Navratri Celebrations - Kamolsavam at KANNAMPULLY MAHAKAMESWARA TEMPLE">
+    <title>Navratri Celebrations - Kamolsavam | KANNAMPULLY MAHAKAMESWARA TEMPLE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        .event-page-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                        url('photos/temple/1.jpeg') center/cover;
+            padding: 8rem 0 4rem;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .event-page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .event-page-hero .event-date-badge {
+            display: inline-block;
+            background: var(--gradient-primary);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+        
+        .event-content {
+            padding: 4rem 0;
+            background: var(--white);
+        }
+        
+        .event-info {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .event-info h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .event-info p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .event-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .highlight-item {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .highlight-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-photos {
+            padding: 4rem 0;
+            background: var(--bg-light);
+        }
+        
+        .event-photos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .event-photo-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            height: 300px;
+            box-shadow: 0 5px 20px var(--shadow);
+        }
+        
+        .event-photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .photo-top img {
+            object-position: top;
+        }
+        
+        .event-photo-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .photo-caption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 1rem;
+            color: var(--white);
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .back-button {
+            text-align: center;
+            padding: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="photos/temple-logo.jpeg" alt="Temple Logo" class="temple-logo-img">
+                <span class="temple-name">KANNAMPULLY MAHAKAMESWARA TEMPLE</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#temple-carousel" class="nav-link">Temple</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="index.html#events" class="nav-link">Events</a></li>
+                <li><a href="index.html#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="index.html#donate" class="nav-link donate-btn">Donate</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Event Hero Section -->
+    <section class="event-page-hero">
+        <div class="container">
+            <h1>Kamolsavam Celebrations</h1>
+            <p style="font-size: 1.5rem; margin-bottom: 1rem;">Kamolsavam – Sacred Thanthric Dance Offering</p>
+            <div class="event-date-badge">
+                October 10, 2024 | Completed
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Information -->
+    <section class="event-content">
+        <div class="container">
+            <div class="event-info">
+                <h2>About the Celebration</h2>
+                <p>
+                    Kamolsavam is a unique Thanthric Pooja performed exclusively at KANNAMPULLY MAHAKAMESWARA TEMPLE. During this offering,
+                    classical dancers perform directly in front of the Sanctum Sanctorum, presenting their art to the deity itself. Every step,
+                    expression, and rhythm becomes an offering, transforming the temple into a sacred stage of devotion.
+                </p>
+                <p>
+                    The performances are completely live and follow prescribed <em>raga</em>, <em>bhava</em>, and costume traditions. Each dancer must complete a
+                    continuous 72-minute presentation (3 nazhika), symbolizing unwavering focus and surrender. Kamolsavam begins at dusk,
+                    with the offerings commencing at 7:00 PM after the evening pooja, bathed in the glow of temple lamps.
+                </p>
+                <p>
+                    Only women and female transgender artists between the ages of 16 and 56 are permitted to offer this pooja, safeguarding the
+                    sanctity and lineage of the tradition. Recognized classical dance forms such as Bharatanatyam, Mohiniyattam, Kuchipudi,
+                    Odissi, Kathak, Manipuri, Sattriya, and Nangiar Koothu are welcomed, each adding its own vocabulary of devotion to the festival.
+                </p>
+                <p>
+                    The Kamolsavam evening is more than a performance—it is a living expression of faith, discipline, and service. Families gather
+                    to witness the offering, temple bells resonate with the music, and the atmosphere brims with palpable spiritual energy.
+                </p>
+
+                <div class="event-highlights">
+                    <div class="highlight-item">
+                        <h3>🕉️ Thanthric Offering</h3>
+                        <p>Dance directly before the deity as part of a sacred pooja tradition.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h3>⏱️ 72-Minute Discipline</h3>
+                        <p>Each performer completes 3 nazhika (72 minutes) without interruption.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h3>🎼 Raga • Bhava • Costume</h3>
+                        <p>Live music, codified expressions, and traditional attire are mandatory.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h3>💃 Classical Lineage</h3>
+                        <p>Bharatanatyam, Mohiniyattam, Kuchipudi, Odissi, Kathak, Manipuri, Sattriya & Nangiar Koothu.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Photos -->
+    <section class="event-photos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Event Photos</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">Moments from Kamolsavam</p>
+            </div>
+            <div class="event-photos-grid">
+                <div class="event-photo-item">
+                    <img src="photos/gallery/kamolsavam/1.jpeg" alt="Kamolsavam Photo 1">
+                    <div class="photo-caption">Guru Anupama Mohan</div>
+                </div>
+                <div class="event-photo-item photo-top">
+                    <img src="photos/gallery/kamolsavam/2.jpeg" alt="Kamolsavam Photo 2">
+                    <div class="photo-caption">Guru Kalamandalam Sugandhi</div>
+                </div>
+                <div class="event-photo-item photo-top">
+                    <img src="photos/gallery/kamolsavam/3.jpeg" alt="Kamolsavam Photo 3">
+                    <div class="photo-caption">Guru Vaijayanthi Kashi</div>
+                </div>
+                <div class="event-photo-item photo-top">
+                    <img src="photos/gallery/kamolsavam/4.jpeg" alt="Kamolsavam Photo 4">
+                    <div class="photo-caption">Sandhya Manoj · Odissi</div>
+                </div>
+                <div class="event-photo-item">
+                    <img src="photos/gallery/kamolsavam/5.jpeg" alt="Kamolsavam Photo 5">
+                    <div class="photo-caption">Guru Ramadevi · Kuchipudi</div>
+                </div>
+                <div class="event-photo-item photo-top">
+                    <img src="photos/gallery/kamolsavam/6.jpeg" alt="Kamolsavam Photo 6">
+                    <div class="photo-caption">Vanaja Uday</div>
+                </div>
+                <div class="event-photo-item">
+                    <img src="photos/gallery/kamolsavam/7.jpeg" alt="Kamolsavam Photo 7">
+                    <div class="photo-caption">Deepthy Omcheri Bhalla</div>
+                </div>
+                <div class="event-photo-item">
+                    <img src="photos/gallery/kamolsavam/8.jpeg" alt="Kamolsavam Photo 8">
+                    <div class="photo-caption">Vinitha Nedungadi</div>
+                </div>
+                <div class="event-photo-item">
+                    <img src="photos/gallery/kamolsavam/9.jpeg" alt="Kamolsavam Photo 9">
+                    <div class="photo-caption">Kalamandalam Kshemavathi</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back Button -->
+    <section class="back-button">
+        <div class="container">
+            <a href="index.html#events" class="btn btn-primary">Back to Events</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="photos/temple-logo.jpeg" alt="Temple Logo" class="footer-logo-img">
+                        <h3>KANNAMPULLY MAHAKAMESWARA TEMPLE</h3>
+                    </div>
+                    <p>A place of worship, peace, and spiritual enlightenment serving our community with devotion and love.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#events">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 KANNAMPULLY MAHAKAMESWARA TEMPLE. All rights reserved. | Designed with 🙏 and devotion</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

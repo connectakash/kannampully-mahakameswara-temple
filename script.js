@@ -109,10 +109,14 @@ amountButtons.forEach(button => {
         const amount = button.getAttribute('data-amount');
         
         if (amount === 'custom') {
-            customAmountGroup.style.display = 'block';
+            if (customAmountGroup) {
+                customAmountGroup.style.display = 'block';
+            }
             selectedAmount = null;
         } else {
-            customAmountGroup.style.display = 'none';
+            if (customAmountGroup) {
+                customAmountGroup.style.display = 'none';
+            }
             selectedAmount = amount;
         }
     });
@@ -123,61 +127,49 @@ amountButtons.forEach(button => {
 // ===================================
 const donationForm = document.getElementById('donation-form');
 
-donationForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    let amount = selectedAmount;
-    
-    if (customAmountGroup.style.display === 'block') {
-        amount = customAmountInput.value;
-    }
-    
-    const name = document.getElementById('donor-name').value;
-    const mobile = document.getElementById('donor-mobile').value;
-    const email = document.getElementById('donor-email').value;
-    
-    if (!amount || amount <= 0) {
-        alert('Please select or enter a valid donation amount.');
-        return;
-    }
-    
-    if (!name || !mobile || !email) {
-        alert('Please fill in all required fields.');
-        return;
-    }
-    
-    // Validate mobile number (10 digits)
-    if (!/^[0-9]{10}$/.test(mobile)) {
-        alert('Please enter a valid 10-digit mobile number.');
-        return;
-    }
-    
-    // In a real application, you would process the payment here
-    alert(`Thank you ${name} for your generous donation of ₹${amount}! 🙏\n\nThis is a demo. In a real website, this would redirect to a payment gateway.`);
-    
-    // Reset form
-    donationForm.reset();
-    amountButtons.forEach(btn => btn.classList.remove('active'));
-    customAmountGroup.style.display = 'none';
-    selectedAmount = null;
-});
+if (donationForm) {
+    donationForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        let amount = selectedAmount;
+        
+        if (customAmountGroup && customAmountGroup.style.display === 'block') {
+            amount = customAmountInput.value;
+        }
+        
+        const name = document.getElementById('donor-name').value;
+        const mobile = document.getElementById('donor-mobile').value;
+        const email = document.getElementById('donor-email').value;
+        
+        if (!amount || amount <= 0) {
+            alert('Please select or enter a valid donation amount.');
+            return;
+        }
+        
+        if (!name || !mobile || !email) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+        
+        // Validate mobile number (10 digits)
+        if (!/^[0-9]{10}$/.test(mobile)) {
+            alert('Please enter a valid 10-digit mobile number.');
+            return;
+        }
+        
+        // In a real application, you would process the payment here
+        alert(`Thank you ${name} for your generous donation of ₹${amount}! 🙏\n\nThis is a demo. In a real website, this would redirect to a payment gateway.`);
+        
+        // Reset form
+        donationForm.reset();
+        amountButtons.forEach(btn => btn.classList.remove('active'));
+        if (customAmountGroup) {
+            customAmountGroup.style.display = 'none';
+        }
+        selectedAmount = null;
+    });
+}
 
-// ===================================
-// Contact Form Submission
-// ===================================
-const contactForm = document.getElementById('contact-form');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const formData = new FormData(contactForm);
-    
-    // In a real application, you would send this data to a server
-    alert('Thank you for your message! We will get back to you soon. 🙏\n\nThis is a demo. In a real website, this would send your message to the temple administration.');
-    
-    // Reset form
-    contactForm.reset();
-});
 
 // ===================================
 // Scroll Animations (Intersection Observer)
@@ -395,18 +387,6 @@ if (footerYear) {
     const currentYear = new Date().getFullYear();
     footerYear.innerHTML = footerYear.innerHTML.replace('2025', currentYear);
 }
-
-// ===================================
-// Add Loading Animation
-// ===================================
-window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    document.body.style.transition = 'opacity 0.5s ease';
-    
-    setTimeout(() => {
-        document.body.style.opacity = '1';
-    }, 100);
-});
 
 // ===================================
 // Console Welcome Message

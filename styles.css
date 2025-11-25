@@ -934,10 +934,41 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.6;
 }
 
-.contact-form {
+.contact-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--accent-color);
+}
+
+.contact-map {
     background: var(--bg-light);
     padding: 2.5rem;
     border-radius: 15px;
+}
+
+.contact-map h4 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+}
+
+.contact-map .map-container {
+    width: 100%;
+    box-shadow: 0 5px 20px var(--shadow);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.contact-map .map-container iframe {
+    display: block;
+    width: 100%;
 }
 
 /* ===================================
@@ -951,7 +982,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    grid-template-columns: 2fr 1fr 1fr;
     gap: 2rem;
     margin-bottom: 2rem;
 }
